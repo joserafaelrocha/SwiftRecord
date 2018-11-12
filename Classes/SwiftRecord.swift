@@ -168,7 +168,7 @@ open class SwiftRecord {
     }
     fileprivate init() {
         #if os(iOS)
-        NotificationCenter.default.addObserver(self, selector: #selector(SwiftRecord.applicationWillTerminate), name: NSNotification.Name.UIApplicationWillTerminate, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SwiftRecord.applicationWillTerminate), name: UIApplication.willTerminateNotification, object: nil)
         #endif
     }
     @objc open func applicationWillTerminate() {
